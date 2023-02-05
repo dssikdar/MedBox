@@ -2,7 +2,9 @@ from flask import Flask, render_template, request, redirect
 import database
 
 from flask_cors import CORS
+import diagnose
 
+import json
 #from main import #something
 
 app = Flask(__name__)
@@ -12,9 +14,10 @@ CORS(app)
 @app.route('/diagnoses', methods = ['POST', 'GET'])
 def get_diagnoses_drugs():
     if request.method == 'POST':
-      symptoms = request.form.get('symptoms')
-      #diagnose(symptoms)
-      return {'result':'apple'}
+      symptoms = json.loads(request.data)['symptoms']
+      print(symptoms)
+      diagnosis, treatment = diagnose.run(symptoms, 'Male', 2000)
+      return [diagnosis, treatment]
     else:
       return {'result':'getted'}
 
