@@ -32,10 +32,6 @@ def get_most_probable_diagnoses(output: dict) -> list:
         diagnoses.append(temp2[2*i][4:].rstrip())
 
     return diagnoses
-    
-    #print(output['Message'])
-    #confidence_level = output['Message'].split()[2]
-    #return diagnosis
 
 
 def get_diagnosis_id(diag_client, user_issue):
@@ -65,8 +61,6 @@ def run(user_symptoms: list, gender: str, yob: str) -> dict:
                 diagnosis["Message"] = diagnosis["Message"]+ do[i]["Issue"]["Name"] + " (Accuracy: " + str(do[i]["Issue"]["Accuracy"])[:4] +"% ) "+" , "
     else:
         diagnosis = {"Message":"I could not diagnose by entered symptoms."} 
-
-    # Diagnosis = giant dictionary with diagnosis and confidence level 
 
     diagnosis_1_id = get_diagnosis_id(d, get_most_probable_diagnoses(diagnosis)[0])
     diagnosis_2_id = get_diagnosis_id(d, get_most_probable_diagnoses(diagnosis)[1])

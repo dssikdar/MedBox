@@ -41,4 +41,3 @@ def unravel_symptoms(form):
   print(form)
   values = [v for k,v in form]
   return values
-  

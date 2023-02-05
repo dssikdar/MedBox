@@ -6,12 +6,21 @@
         <meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
         <link rel="stylesheet" href="style.css">
 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">        
+
     </head>
     <body>
+        <img src ='logo.png' alt='logo' style = 'width:200px;height:150px;'>
         <h1 style = 'text-align:center;'>Please check your symptoms:</h1>
 
-        <h2>
-            <form action="/action_page.php">
+            <form class="text" action="/action_page.php">
+
+                
+
+
                 <input type="checkbox" id="cough" name="vehicle1" value="Bike">
                 <label for="cough"> Cough</label><br><br>
 
@@ -40,9 +49,18 @@
                 <label for="pain"> Pain</label><br><br>
 
 
-                <a class="btn" href = 'med.html'>SUBMIT</a>
+               
+
+                <div class = 'right'>
+                    <a class="btn" href='med.html'>NEXT</a>
+                </div>
                 
-        </h2>
+                <div class="left">
+            
+                    <a class="btn" href='hackweb.html'>PREVIOUS</a>
+                </div>
+            
+
 
     </body>
 

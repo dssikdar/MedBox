@@ -1,30 +1,74 @@
 body {
+
+    font-family: 'Overpass', sans-serif;
     /* The image used */
-    background-image: url("bg.jpg");
+    background-image: url("background.png");
   
     /* Full height */
   
     /* Center and scale the image nicely */
+    min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     overflow:hidden
 }
+label {color: black;}
 
+.text {
+    margin: 80px;
+}
 
 .btn {
     border: 2px solid rgb(85, 84, 88);
-    padding: 6px 12px;
+    padding: 20px 50px;
     border-radius: 4px;
     background-color: #eee;
     text-decoration: none;
     color: black;
-
     transition: color 350ms, background-color 350ms;
 
 
 }
+.center {
+    text-align: center;
+    max-width: min(500px, 80vw);
+    margin: 20px auto;
 
+}
+.center > a {
+    display: block;
+
+}
+
+.home {
+    margin-top: 100px
+}
+
+.right {
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+
+
+}
+.right > a {
+    display: block;
+
+}
+
+.left {
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+
+}
+.left > a {
+    display: block;
+
+}
 .btn:hover {
     background-color: rgb(1, 140, 175);
     color: white;
