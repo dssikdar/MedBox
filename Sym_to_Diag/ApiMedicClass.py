@@ -31,7 +31,7 @@ class DiagnosisClient:
         url = self._healthServiceUrl + "/" + action
         response = requests.get(url)
         data = json.loads(response.text)
-        return data       
+        return data
 
     
     def loadIssues(self):

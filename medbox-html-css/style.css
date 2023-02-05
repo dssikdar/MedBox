@@ -1,46 +1,58 @@
-body {
-    /* The image used */
-    background-image: url("background.jpg");
-  
-    /* Full height */
-  
-    /* Center and scale the image nicely */
-    min-height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow:hidden
+.mainbox {
+    top: 25%;
+    left: 25%;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    border: 5px solid red;
+    /*border-radius:5%;*/
+    padding: 10px;
+    position: absolute;
+    overflow-wrap: break-word;
 }
-label {color: red;}
 
 .btn {
-    border: 2px solid rgb(85, 84, 88);
+    border: 3px solid rgb(85, 84, 88);
     padding: 20px 50px;
     border-radius: 4px;
     background-color: #eee;
     text-decoration: none;
     color: black;
-    
     transition: color 350ms, background-color 350ms;
-
-
 }
+
 .center {
     text-align: center;
     max-width: min(500px, 80vw);
     margin: 20px auto;
-
 }
+
 .center > a {
-    display: block;
-
+    display: block
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.backbtn {
+    border: 2px solid rgb(85, 84, 88);
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: #eee;
+    text-decoration: none;
+    color: black;
+    transition: color 350ms, background-color 350ms;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
 .btn:hover {
     background-color: rgb(1, 140, 175);
     color: white;
 }
-
-
 
 .container{
     width:100%;
