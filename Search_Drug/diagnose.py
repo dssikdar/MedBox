@@ -24,9 +24,8 @@ def get_diagnosis_id(diag_client, user_issue):
         if user_issue.lower() == issue["Name"].lower():
             return int(issue["ID"])
 
-
-def run(user_symptoms: list, gender: str, yob: int) -> dict:       
-    d = DiagnosisClient(username="i7FGf_UCI_EDU_AUT",language="en-gb",healthServiceUrl="https://healthservice.priaid.ch",authServiceUrl="https://authservice.priaid.ch/login",password="z4E5Ddt7W8FySq39J")
+def run(user_symptoms: list, gender: str, yob: int, username: str, password: str) -> dict:   
+    d = DiagnosisClient(username=username,language="en-gb",healthServiceUrl="https://healthservice.priaid.ch",authServiceUrl="https://authservice.priaid.ch/login",password=password)
       
     all_symptoms = d.loadSymptoms()
 
@@ -69,7 +68,10 @@ if __name__ == '__main__':
     gender = 'Male'
     yob = 1999
 
-    diagnoses, treatment = run(symptoms, gender, yob)
+    api_username = 'insert username here'
+    api_password = 'insert password here'
+
+    diagnoses, treatment = run(symptoms, gender, yob, api_username, api_password)
     print('Diagnoses:', diagnoses, '\n')
     print('Treatments:', search_med_using_diagnosis(diagnoses))
 
