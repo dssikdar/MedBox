@@ -17,6 +17,22 @@ label {
     margin-right: 10vw;
 }
 
+.textsymptoms {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.smallbtn {
+    border: 2px solid rgb(85, 84, 88);
+    border-radius: 4px;
+    background-color: #e4e4e4;
+    text-decoration: none;
+    color: black;
+    transition: color 350ms, background-color 350ms;
+}
+
 .btn {
     border: 2px solid rgb(85, 84, 88);
     padding: 20px 50px;
@@ -30,6 +46,14 @@ label {
 .center {
     text-align: center;
     max-width: min(500px, 80vw);
+    margin: 20px auto;
+
+}
+
+.center-select {
+    text-align: center;
+    position: relative;
+    /*max-width: min(500px, 80vw);*/
     margin: 20px auto;
 
 }
@@ -105,13 +129,15 @@ label {
 }
 
 .pill {
-    animation:  5s 1 alternate rotation forwards;
+    animation: 5s 1 alternate rotation forwards;
 }
 
 @keyframes rotation {
     from {
         transform: rotate(0deg);
-    } to {    
+    }
+
+    to {
         transform: rotate(180deg);
     }
 }
