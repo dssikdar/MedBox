@@ -1,16 +1,4 @@
-###cough, cold, and flu
-
-#Flu
-medicine1
-medicine2
-#Cold
-medicine3
-medicine4
-#Covid (diagnosis)
-medicine5
-medicine6
-
-#cold_cough_congestion
+#cold cough congestion
 'Vicks DayQuil and Nyquil SEVERE Cold'
 'Flu and Congestion Medicine and Congestion Medicine LiquiCaps Convenience Pack - Relieves Cough, Sore Throat, Congestion, Fever and Runny Nose, Daytime & Nighttime, 48 CT'
 'Vicks Vapo Steam Cough Suppressant'
@@ -20,7 +8,7 @@ medicine6
 'Ricola Nautral Herb Cough Drops'
 'Betadine Antiseptic Sore Throat Garagle, 8 OZ'
 
-###fever
+#fever
 'Advil Liqui-Gels Pain Reliever and Fever Reducer, Solubilized Ibuprofen 200mg'
 'Liquid Fast Pain Relief'
 'Tylenol Extra Strength Rapid Release Gels with Acetaminophen'
@@ -33,7 +21,6 @@ medicine6
 'Icy Hot Pain Relieving Topical Analgesic Back Patch, 5 CT'
 'CVS Health Peas Hot or Cold Therapy Pack'
 
-
 #burn
 'CVS Health Sterile Hydrogel Burn Pads 4CT'
 'Gold Bond Medicated Extra Strength Body Powder'
@@ -44,21 +31,20 @@ medicine6
 'Aquaphor Advanced Therapy Healing Ointment Skin Protectant'
 'Eucerin Eczema Relief Body Creme'
 
-
-###cut/scrape
+#cut
 #bandaids
 'Band-Aid Brand Adhesive Bandage Family Variety Pack, Assorted, 110 CT'
 'Band-Aid Brand Water Block Flex Waterproof Adhesive Pads, Large, 6 CT'
 
-
-###vitamins
-#multivit
+#vitamins
 'Culturelle Digestive Health, Daily Probiotic Capsules'
 'Vitafusion Women's Bone and Metabolism Daily Multivitamin Gummy Formula, 150CT'
 'Vitafusion Men's Daily MultiVitamin Formula Gummy Vitamins'
+
 #supplements
 'Natures Bounty Fish Oil with Omega-3 Softgels 1200mg, 360CT '
 'Nature's Bounty Odorless Fish Oil Softgels 2400mg, 90CT'
+
 #mood
 'Nature's Bounty Anxiety & Stress Relief, Ashwagandha KSM-66*, 50 CT'
 'Natural Vitality Calm Magnesium Supplement Gummies, Raspberry-Lemon Flavor, 120 CT'
