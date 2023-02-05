@@ -17,6 +17,8 @@ label {color: black;}
 
 .text {
     margin: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .btn {
