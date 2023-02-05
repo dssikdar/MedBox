@@ -1,66 +1,111 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <met charset = 'utf-8'></met>
+        <meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="style.css">
 
-<head>
-    <met charset='utf-8'></met>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
 
-</head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">        
 
-<body>
-    <img src='logo.png' alt='logo' style='width:200px;height:150px;'>
-    <h1 style='text-align:center;'>Please check your symptoms:</h1>
+    </head>
+    <body>
+        <img src ='logo.png' alt='logo' style = 'width:200px;height:150px;'>
+        <h1 style = 'text-align:center;'>Please check your symptoms:</h1>
 
-    <form class="textsymptoms" action="/action_page.php">
-        <div>
-            <input type="checkbox" id="cough" name="vehicle1" value="Bike">
-            <label for="cough"> Cough</label><br><br>
-        </div>
-        <div>
-            <input type="checkbox" id="fever" name="vehicle2" value="Car">
-            <label for="fever"> Fever</label><br><br>
-        </div>
-        <div>
-            <input type="checkbox" id="headache" name="vehicle3" value="Boat">
-            <label for="headache"> Headache</label><br><br>
-        </div>
-        <div>
-            <input type="checkbox" id="stomach" name="vehicle1" value="Bike">
-            <label for="stomach"> Stomachache</label><br><br>
-        </div>
-        <div>
-            <input type="checkbox" id="allergies" name="vehicle1" value="Bike">
-            <label for="allergies"> Allergies</label><br><br>
-        </div>
-        <div>
-            <input type="checkbox" id="sore" name="vehicle1" value="Bike">
-            <label for="sore"> Soreness</label><br><br>
-        </div>
-        <div>
-            <input type="checkbox" id="bodyache" name="vehicle1" value="Bike">
-            <label for="bodyache"> Body Ache</label><br><br>
-        </div>
-        <div>
-            <input type="checkbox" id="anxiety" name="vehicle1" value="Bike">
-            <label for="anxiety"> Anxiety</label><br><br>
-        </div>
-        <div>
-            <input type="checkbox" id="pain" name="vehicle1" value="Bike">
-            <label for="pain"> Pain</label><br><br>
-        </div>
-        <div class='right'>
-            <a class="btn" href='med.html'>NEXT</a>
-        </div>
+            <form class="text" action="/action_page.php">
 
-        <div class="left">
-            <a class="btn" href='hackweb.html'>PREVIOUS</a>
-        </div>
-    </form>
-</body>
+                
+
+
+                <input type="checkbox" id="cough" name="symptom" value="cough">
+                <label for="cough"> Cough</label><br><br>
+
+                <input type="checkbox" id="fever" name="symptom" value="fever">
+                <label for="fever"> Fever</label><br><br>
+
+                <input type="checkbox" id="headache" name="symptom" value="headache">
+                <label for="headache"> Headache</label><br><br>
+                
+                <input type="checkbox" id="stomach" name="symptom" value="stomachache">
+                <label for="stomach"> Stomachache</label><br><br>
+
+                <input type="checkbox" id="allergies" name="symptom" value="allergies">
+                <label for="allergies"> Allergies</label><br><br>
+
+                <input type="checkbox" id="sore" name="symptom" value="sore">
+                <label for="sore"> Soreness</label><br><br>
+
+                <input type="checkbox" id="bodyache" name="symptom" value="bodyache">
+                <label for="bodyache"> Body Ache</label><br><br>
+
+                <input type="checkbox" id="anxiety" name="symptom" value="anxiety">
+                <label for="anxiety"> Anxiety</label><br><br>
+
+                <input type="checkbox" id="pain" name="symptom" value="pain">
+                <label for="pain"> Pain</label><br><br>
+
+                <div class = 'right'>
+                    <a class="btn" id=next_button>NEXT</a>
+                </div>
+                
+                <script>
+                    function collect_drugs(drugs){
+                        console.log(drugs)
+                        if (Array.isArray(drugs)){
+                            str = '';
+                            for (let i = 0; i < drugs.length; i++)
+                            {
+                                if (i>0) str = str+'&';
+                                str = str + "drug="+drugs[i];
+
+                            }
+                            return str;
+                        }
+                        else return "drug="+drugs
+                        
+                    }
+
+                    async function postData(symptoms){
+                        const options = {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify(symptoms),
+                        };
+                        fetch('http://127.0.0.1:5000/diagnoses', options)
+                            .then(response => response.json())
+                            //.then(response => console.log(collect_drugs(response.treatment)))
+                            //.then(response => console.log(collect_drugs(response.treatment)))
+                            .then(response => window.location.replace("med.html?"+collect_drugs(response.drugs)))
+                            .catch(err => console.error(err));
+                    }
+                    
+                    const button= document.querySelector('#next_button');
+                    button.addEventListener('click', (event) => {
+                        let checkboxes= document.querySelectorAll('input[name="symptom"]:checked');
+                        let output= [];
+                        checkboxes.forEach((checkbox) => {
+                            output.push(checkbox.value);
+                        });
+                        console.log(output);
+                        let result = postData({symptoms:output});
+                        //console.log(result);
+                        //console.log(result.diagnoses);
+                        //location.href("med.html"+"");
+                    });    
+                </script>
+
+                <div class="left">
+            
+                    <a class="btn" href='hackweb.html'>PREVIOUS</a>
+                </div>
+            
+
+
+    </body>
 
 <html>
+    
