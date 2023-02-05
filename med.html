@@ -17,16 +17,36 @@
         <h1 style = 'text-align:center;'>What MedBox recommends to you </h1>
         <h2 style = 'text-align:center;'>Please select the one(s) you would like</h2>'
 
-            <form class="text" action="/action_page.php">
-                <input type="checkbox" id="advil" name="vehicle1" value="Bike">
-                <label for="advil"> Advil</label><br><br>
+        <form class="text" action="/action_page.php" id="cboxes">
+            <!--<input type="checkbox" id="advil" name="vehicle1" value="Bike">
+            <label for="advil"> Advil</label><br><br>
 
-                <input type="checkbox" id="cough" name="vehicle2" value="Car">
-                <label for="cough"> Cough Drop</label><br><br>
+            <input type="checkbox" id="cough" name="vehicle2" value="Car">
+            <label for="cough"> Cough Drop</label><br><br>
 
-                <input type="checkbox" id="headache" name="vehicle3" value="Boat">
-                <label for="headache"> Headache</label><br><br>
+            <input type="checkbox" id="headache" name="vehicle3" value="Boat">
+            <label for="headache"> Headache</label><br><br>*/-->
+            
+            <script>
+                let params = new URLSearchParams(location.search);
+                var drugs =  params.getAll('drug');
+                console.log(drugs);
 
+                var myDiv = document.getElementById("cboxes");
+
+                for (var i = 0; i < drugs.length; i++) {
+                    var checkBox = document.createElement("input");
+                    var label = document.createElement("label");
+                    checkBox.type = "checkbox";
+                    checkBox.value = drugs[i];
+                    myDiv.appendChild(checkBox);
+                    myDiv.appendChild(label);
+                    label.appendChild(document.createTextNode(drugs[i]));
+                    var br = document.createElement("br");
+                    myDiv.appendChild(br);
+                    myDiv.appendChild(br);
+                }
+            </script>
 
 
 
