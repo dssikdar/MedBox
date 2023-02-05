@@ -1,7 +1,7 @@
 from ApiMedicClass import DiagnosisClient
 
 
-def return_sym_ids(user_symptoms, all_symptoms) -> list:
+def return_sym_ids(user_symptoms: list, all_symptoms: list) -> list:
     sym_ids = []
     for symptom in user_symptoms:
         for i in all_symptoms:
@@ -18,9 +18,12 @@ def filter_keywords(output: dict) -> list:
 
 def get_most_probable_diagnosis(output: dict) -> str:
     diagnosis = output['Message'].split()[0]
-    confidence_level = output['Message'].split()[2]
+    #confidence_level = output['Message'].split()[2]
+    return f"{diagnosis}"
 
-    return f"I am {confidence_level} confident that you have {diagnosis}."
+
+def get_treatment_description():
+    pass
 
 
 def run(user_symptoms: list, gender: str, yob: str) -> dict:       
