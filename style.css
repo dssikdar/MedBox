@@ -2,17 +2,26 @@
 
 .btn {
     border: 2px solid rgb(85, 84, 88);
-    padding: 6px 12px;
+    padding: 20px 50px;
     border-radius: 4px;
     background-color: #eee;
     text-decoration: none;
     color: black;
-
+    
     transition: color 350ms, background-color 350ms;
 
 
 }
+.center {
+    text-align: center;
+    max-width: min(500px, 80vw);
+    margin: 20px auto;
 
+}
+.center > a {
+    display: block;
+
+}
 .btn:hover {
     background-color: rgb(1, 140, 175);
     color: white;
