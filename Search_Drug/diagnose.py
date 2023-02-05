@@ -25,14 +25,14 @@ def get_diagnosis_id(diag_client, user_issue):
             return int(issue["ID"])
 
 
-def run(user_symptoms: list, gender: str, yob: str) -> dict:       
-    d = DiagnosisClient(username="s2NEp_GMAIL_COM_AUT",language="en-gb",healthServiceUrl="https://healthservice.priaid.ch",authServiceUrl="https://authservice.priaid.ch/login",password="f9H6Brm5Z3NyFk8p7")
+def run(user_symptoms: list, gender: str, yob: int) -> dict:       
+    d = DiagnosisClient(username="i7FGf_UCI_EDU_AUT",language="en-gb",healthServiceUrl="https://healthservice.priaid.ch",authServiceUrl="https://authservice.priaid.ch/login",password="z4E5Ddt7W8FySq39J")
       
     all_symptoms = d.loadSymptoms()
 
     relevant_sym_ids = return_sym_ids(user_symptoms, all_symptoms)
                 
-    do = d.loadDiagnosis(gender=gender, yearOfBirth=int(yob), selectedSymptoms=relevant_sym_ids)
+    do = d.loadDiagnosis(gender=gender, year_of_birth=yob, selectedSymptoms=relevant_sym_ids)
 
     diagnosis = {'Message':''}
     if do:
@@ -50,7 +50,7 @@ def run(user_symptoms: list, gender: str, yob: str) -> dict:
     list_of_treatments.append(d.loadIssueInfo(diagnosis_2_id)['TreatmentDescription'])
     list_of_treatments.append(d.loadIssueInfo(diagnosis_3_id)['TreatmentDescription'])
 
-    return get_most_probable_diagnoses(diagnosis), list_of_treatments
+    return get_most_probable_diagnoses(diagnosis), list_of_treatments 
 
 
 def search_med_using_diagnosis(diagnoses: list) -> list:
