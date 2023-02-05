@@ -15,9 +15,11 @@ label {
 .text {
     margin-left: 10vw;
     margin-right: 10vw;
+    font-size: 20px;
 }
 
 .textsymptoms {
+    font-size:20px;
     margin-left: 10vw;
     margin-right: 10vw;
     display: grid;
@@ -52,7 +54,9 @@ label {
 
 .center-select {
     text-align: center;
-    position: relative;
+    position: absolute;
+    bottom:0;
+    right:0;
     /*max-width: min(500px, 80vw);*/
     margin: 20px auto;
 
