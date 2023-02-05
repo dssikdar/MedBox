@@ -27,3 +27,7 @@ def decrement_inventory():
 @app.route("/dothis", )
 def get_drug():
     return get_drug(request.args.get('drug_name'))
+
+def unravel_symptoms(form):
+  '''Takes in request.form, unravels it to get a list of simple symptoms'''
+  
