@@ -3,7 +3,11 @@ x = input()
 #for cough, cold, and flu
 
 #sub cat 1
-cold_cough_congestion = ['Vicks DayQuil and Nyquil SEVERE Cold, Flu and Congestion Medicine and Congestion Medicine LiquiCaps Convenience Pack - Relieves Cough, Sore Throat, Congestion, Fever and Runny Nose, Daytime & Nighttime, 48 CT', 'Vicks Vapo Steam Cough Suppressant', 'Tylenol Child & Adult Oral Suspension, Pain & Fever, Cherry, 8 fl. Oz']
+cold_cough_congestion = ['Vicks DayQuil and Nyquil SEVERE Cold, Flu and Congestion \
+Medicine and Congestion Medicine LiquiCaps Convenience Pack - Relieves Cough, Sore \
+Throat, Congestion, Fever and Runny Nose, Daytime & Nighttime, 48 CT', 'Vicks Vapo \
+Steam Cough Suppressant', \
+                         'Tylenol Child & Adult Oral Suspension, Pain & Fever, Cherry, 8 fl. Oz']
 cold_flu = ['Navage Nasal Care Saline Nasal Irrigation Kit', 'Sinex Severe Vicks Nasal Decongestant Spray, Twin Pack, 1 oz ']
 cough_drops = ['Ricola Nautral Herb Cough Drops,', 'Betadine Antiseptic Sore Throat Garagle, 8 OZ' ]
 
