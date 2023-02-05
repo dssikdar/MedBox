@@ -15,7 +15,7 @@ def get_diagnoses_drugs():
     if request.method == 'POST':
       symptoms = json.loads(request.data).get('symptoms')
       print(symptoms)
-      #return {"diagnoses":"sickness", "treatment": "apple"}
+      return {"diagnoses":"sickness", "treatment": "apple"}
       diagnoses, treatment = diagnose.run(symptoms, "Male", 2000)
       return {'diagnoses':diagnoses, 'treatment':treatment}
 
