@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import database
 
 #from flask_cors import CORS
@@ -12,7 +12,8 @@ app = Flask(__name__)
 def get_diagnoses_drugs():
     if request.method == 'POST':
       symptoms = request.form.get('symptoms')
-      return diagnose(symptoms)
+      diagnose(symptoms)
+      return redirect("med.html", code=302)
 
 @app.route("/withdraw", methods = ['POST', 'GET'])
 def decrement_inventory():
@@ -30,4 +31,7 @@ def get_drug():
 
 def unravel_symptoms(form):
   '''Takes in request.form, unravels it to get a list of simple symptoms'''
+  print(form)
+  values = [v for k,v in form]
+  return values
   
