@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <met charset='utf-8'></met>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+    <script src="./bottle.js"></script>
+</head>
+
+<body>
+    <img src='logo.png' alt='logo' style='width:200px;height:150px;'>
+    <h1 style='text-align:center;'>Please search for the medication you desire: </h1>
+    <div class="left">
+        <a class="btn" href='hackweb.html'>PREVIOUS</a>
+    </div>
+    <div class='container'>
+        <form action="/action_page.php"></form>
+        <input type="text" id="fname" name="fname" placeholder="Search for medication...">
+        <button class="smallbtn" onclick="myFunction()">Submit</button>
+        <script>
+            function myFunction() {
+                var txt;
+                if (confirm("sample heads up text")) {
+                    txt = "You pressed OK!";
+                } else {
+                    txt = "You pressed Cancel!";
+                }
+                document.getElementById("demo").innerHTML = txt;
+            }
+        </script>
+    </div>
+    <div class="center-select">
+        <a class="btn" , href='medsearch.html'>SELECT</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="center">
+    <img src='logo.png' alt='logo' style='width:200px;height:150px;'>
+    <h1>Scan Code or Input RX Number</h1>
+    <form action="/action_page.php">
+      <input type="text" id="fname" name="fname">
+      <a class="smallbtn" onclick="myFunction()">Submit</a>
+      <script>
+        function myFunction() {
+            var txt;
+            if (confirm("Press a button!")) {
+              txt = "You pressed OK!";
+            } else {
+              txt = "You pressed Cancel!";
+            }
+            document.getElementById("demo").innerHTML = txt;
+          }
+        </script>
+    </form>
+  </div>
+  <div class='right'>
+  <a class="btn" href='medrefill.html'>NEXT</a>
+  </div>
+  <div class="left">
+    <a class="btn" href='home.html'>PREVIOUS</a>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <met charset='utf-8'></met>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <img src='logo.png' alt='logo' style='width:200px;height:150px;'>
+    <h1 style='text-align:center;'>What MedBox recommends to you </h1>
+    <h2 style='text-align:center;'>Please select the one(s) you would like</h2>
+
+    <form class="text" action="/action_page.php">
+        <input type="checkbox" id="advil" name="vehicle1" value="Bike">
+        <label for="advil"> Advil</label><br><br>
+
+        <input type="checkbox" id="cough" name="vehicle2" value="Car">
+        <label for="cough"> Cough Drop</label><br><br>
+
+        <input type="checkbox" id="headache" name="vehicle3" value="Boat">
+        <label for="headache"> Headache</label><br><br>
+
+        <div class='right'>
+            <a class="btn" href='cart.html'>NEXT</a>
+        </div>
+        <div class="left">
+            <a class="btn" href='entersymp.html'>PREVIOUS</a>
+        </div>
