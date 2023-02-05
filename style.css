@@ -2,7 +2,7 @@ body {
 
     font-family: 'Overpass', sans-serif;
     /* The image used */
-    background-image: url("background.jpg");
+    background-image: url("background.png");
   
     /* Full height */
   
@@ -15,6 +15,10 @@ body {
 }
 label {color: black;}
 
+.text {
+    margin: 80px;
+}
+
 .btn {
     border: 2px solid rgb(85, 84, 88);
     padding: 20px 50px;
@@ -22,7 +26,6 @@ label {color: black;}
     background-color: #eee;
     text-decoration: none;
     color: black;
-    
     transition: color 350ms, background-color 350ms;
 
 
@@ -35,6 +38,11 @@ label {color: black;}
 }
 .center > a {
     display: block;
+
+}
+
+.home {
+    margin-top: 100px
 }
 
 .right {
