@@ -1,13 +1,5 @@
-#
-#
-# main() will be run when you invoke this action
-#
-# @param Cloud Functions actions accept a single parameter, which must be a JSON object.
-#
-# @return The output of this action, which must be a JSON object.
-#
-#
 from ApiMedicClass import DiagnosisClient
+
 
 def return_sym_ids(user_symptoms, all_symptoms) -> list:
     sym_ids = []
@@ -17,13 +9,19 @@ def return_sym_ids(user_symptoms, all_symptoms) -> list:
                 sym_ids.append(i["ID"])
     return sym_ids
 
+
 def filter_keywords(output: dict) -> list:
     treatment_description = output.get('TreatmentDescription')
     list_of_words = treatment_description.split()
     return [word for word in list_of_words if word[0].isupper()]
 
+
 def get_most_probable_diagnosis(output: dict) -> str:
-    return output.get('Name')
+    diagnosis = output['Message'].split()[0]
+    confidence_level = output['Message'].split()[2]
+
+    return f"I am {confidence_level} confident that you have {diagnosis}."
+
 
 def run(user_symptoms: list, gender: str, yob: str) -> dict:       
     d = DiagnosisClient(username="s2NEp_GMAIL_COM_AUT",language="en-gb",healthServiceUrl="https://healthservice.priaid.ch",authServiceUrl="https://authservice.priaid.ch/login",password="f9H6Brm5Z3NyFk8p7")
@@ -49,18 +47,11 @@ def run(user_symptoms: list, gender: str, yob: str) -> dict:
         
     return issues
 
-
     
 if __name__ == '__main__':
-    # option: 1 or 2
-    # issue: choose one among csv
-
     symptoms = ['cough', 'fever', 'headache']
     gender = 'Male'
     yob = 1999
 
     diagnosis = run(symptoms, gender, yob)
-
-    #print(filter_keywords(diagnosis))
-    #print(get_name(diagnosis))
-    print(diagnosis)
+    print(get_most_probable_diagnosis(diagnosis))
