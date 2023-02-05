@@ -19,7 +19,7 @@ def read_json(url: str, num_of_entries: int) -> dict:
         json_dict = json.loads(json_text)
         drug_names = set()
         for i in range(num_of_entries):
-            drug_names.add(json_dict['results'][i]['generic_name'])
+            drug_names.add(json_dict['results'][i]['brand_name'])
         return drug_names
     finally:
         if response != None:
