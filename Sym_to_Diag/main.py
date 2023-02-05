@@ -1,18 +1,23 @@
 from flask import Flask, render_template, request
 import database
+import diagnose
+import json
 
-#from flask_cors import CORS
+from flask_cors import CORS
 
 #from main import #something
 
 app = Flask(__name__)
-#CORS(app)
+CORS(app)
 
 @app.route('/diagnoses', methods = ['POST', 'GET'])
 def get_diagnoses_drugs():
     if request.method == 'POST':
-      symptoms = request.form.get('symptoms')
-      return diagnose(symptoms)
+      symptoms = json.loads(request.data).get('symptoms')
+      print(symptoms)
+      #return {"treatment": "apple"}
+      diagnoses, treatment = diagnose.run(symptoms, "Male", 2000)
+      return {'diagnoses':diagnoses, 'treatment':treatment}
 
 @app.route("/withdraw", methods = ['POST', 'GET'])
 def decrement_inventory():
