@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <met charset = 'utf-8'></met>
+        <meta name = 'viewport' content = 'width=device-width, initial-scale=1'>
+        <link rel="stylesheet" href="style.css">
 
-<head>
-    <met charset='utf-8'></met>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">      
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <img src ='logo.png' alt='logo' style = 'width:200px;height:150px;'> 
+        <h1 style = 'text-align:center;'>Medication(s)/Item(s) you've selected: </h1>
 
-</head>
+        <form class="text" action="/action_page.php" id="cboxes">
+        <script>
+            let params = new URLSearchParams(location.search);
+            var drugs =  params.getAll('drug');
+            console.log(drugs);
 
-<body>
-    <img src='logo.png' alt='logo' style='width:200px;height:150px;'>
-    <h1 style='text-align:center;'>Medication(s)/Item(s) you've selected: </h1>
-    <div class="text">
-        <input type="checkbox" id="advil" name="vehicle1" value="Bike">
-        <label for="advil"> Advil</label><br><br>
-        <input type="checkbox" id="cough" name="vehicle2" value="Car">
-        <label for="cough"> Cough Drop</label><br><br>
-    </div>
+            var myDiv = document.getElementById("cboxes");
+
+            for (var i = 0; i < drugs.length; i++) {
+                var checkBox = document.createElement("input");
+                var label = document.createElement("label");
+                checkBox.type = "checkbox";
+                checkBox.value = drugs[i];
+                myDiv.appendChild(checkBox);
+                myDiv.appendChild(label);
+                label.appendChild(document.createTextNode(drugs[i]));
+                var br = document.createElement("br");
+                myDiv.appendChild(br);
+                myDiv.appendChild(br);
+            }
+        </script>
+
+        <!-- <input type="checkbox" id="advil" name="vehicle1" value="Bike">
+                <label for="advil"> Advil</label><br><br>
+
+                <input type="checkbox" id="cough" name="vehicle2" value="Car">
+                <label for="cough"> Cough Drop</label><br><br> -->
 
 
-    <div class='right'>
-        <a class="btn" href='medcart.html'>CHECKOUT</a>
-    </div>
 
-    <div class="left">
-
-        <a class="btn" href='med.html'>PREVIOUS</a>
-    </div>
+        <div class = 'right'>
+            <a class="btn" href='medcart.html'>CHECKOUT</a>
+        </div>
+        
+        <div class="left">
+    
+            <a class="btn" href='med.html'>PREVIOUS</a>
+        </div>
