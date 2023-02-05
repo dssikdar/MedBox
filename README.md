@@ -14,5 +14,3 @@ We are very proud of creating MedBox with many of the features that we originall
 
 ## What we learned
 We learned how to interface Python with APIs, how to use APIs and process JSON files, how to build the entire website using HTML, CSS, and JS, and how to connect the frontend to the backend via Flask Python server and HTTP requests.  
-
-## What's next for MedBox
