@@ -46,8 +46,8 @@ class DiagnosisClient:
         return self._loadFromWebService("symptoms")
 
 
-    def loadDiagnosis(self, selectedSymptoms, gender, yearOfBirth):
+    def loadDiagnosis(self, selectedSymptoms, gender, year_of_birth):
         serializedSymptoms = json.dumps(selectedSymptoms)
-        action = f"diagnosis?symptoms={serializedSymptoms}&gender={gender}&year_of_birth={yearOfBirth}"
+        action = f"diagnosis?symptoms={serializedSymptoms}&gender={gender}&year_of_birth={year_of_birth}"
         return self._loadFromWebService(action)
     

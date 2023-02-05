@@ -1,4 +1,6 @@
 from ApiMedicClass import DiagnosisClient
+from pathlib import Path
+from search_med import search_med_via_diag
 
 def return_sym_ids(user_symptoms: list, all_symptoms: list) -> list:
     sym_ids = []
@@ -22,15 +24,14 @@ def get_diagnosis_id(diag_client, user_issue):
         if user_issue.lower() == issue["Name"].lower():
             return int(issue["ID"])
 
-
-def run(user_symptoms: list, gender: str, yob: str) -> dict:       
-    d = DiagnosisClient(username="s2NEp_GMAIL_COM_AUT",language="en-gb",healthServiceUrl="https://healthservice.priaid.ch",authServiceUrl="https://authservice.priaid.ch/login",password="f9H6Brm5Z3NyFk8p7")
+def run(user_symptoms: list, gender: str, yob: int, username: str, password: str) -> dict:   
+    d = DiagnosisClient(username=username,language="en-gb",healthServiceUrl="https://healthservice.priaid.ch",authServiceUrl="https://authservice.priaid.ch/login",password=password)
       
     all_symptoms = d.loadSymptoms()
 
     relevant_sym_ids = return_sym_ids(user_symptoms, all_symptoms)
                 
-    do = d.loadDiagnosis(gender=gender, yearOfBirth=int(yob), selectedSymptoms=relevant_sym_ids)
+    do = d.loadDiagnosis(gender=gender, year_of_birth=yob, selectedSymptoms=relevant_sym_ids)
 
     diagnosis = {'Message':''}
     if do:
@@ -48,17 +49,29 @@ def run(user_symptoms: list, gender: str, yob: str) -> dict:
     list_of_treatments.append(d.loadIssueInfo(diagnosis_2_id)['TreatmentDescription'])
     list_of_treatments.append(d.loadIssueInfo(diagnosis_3_id)['TreatmentDescription'])
 
-    return get_most_probable_diagnoses(diagnosis), list_of_treatments
+    return get_most_probable_diagnoses(diagnosis), list_of_treatments 
+
+
+def search_med_using_diagnosis(diagnoses: list) -> list:
+    medications = []
+    for diagnosis in diagnoses:
+        med = search_med_via_diag(diagnosis.lower())
+        if med != None:
+            medications.append(med)
+    return medications
     
     
 if __name__ == '__main__':
-    symptoms = ["allergies","soreness","body ache","anxiety","pain"]
+    #symptoms = ["allergies","soreness","body ache","anxiety","pain"]
     #symptoms = ["allergy","soreness","anxiety"]
-    #symptoms = ['cough', 'fever', 'headache']
+    symptoms = ['cough', 'fever', 'headache']
     gender = 'Male'
     yob = 1999
 
-    diagnoses, treatment = run(symptoms, gender, yob)
+    api_username = 'i7FGf_UCI_EDU_AUT'
+    api_password = 'z4E5Ddt7W8FySq39J'
+
+    diagnoses, treatment = run(symptoms, gender, yob, api_username, api_password)
     print('Diagnoses:', diagnoses, '\n')
-    print('Treatment:', treatment)
+    print('Treatments:', search_med_using_diagnosis(diagnoses))
 
