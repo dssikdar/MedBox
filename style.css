@@ -1,22 +1,20 @@
 body {
-
     font-family: 'Overpass', sans-serif;
-    /* The image used */
     background-image: url("background.png");
-  
-    /* Full height */
-  
-    /* Center and scale the image nicely */
     min-height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow:hidden
+    overflow: hidden;
 }
-label {color: black;}
+
+label {
+    color: black;
+}
 
 .text {
-    margin: 80px;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 .btn {
@@ -27,16 +25,16 @@ label {color: black;}
     text-decoration: none;
     color: black;
     transition: color 350ms, background-color 350ms;
-
-
 }
+
 .center {
     text-align: center;
     max-width: min(500px, 80vw);
     margin: 20px auto;
 
 }
-.center > a {
+
+.center>a {
     display: block;
 
 }
@@ -50,12 +48,10 @@ label {color: black;}
     bottom: 0;
     right: 0;
     position: absolute;
-
-
 }
-.right > a {
-    display: block;
 
+.right>a {
+    display: block;
 }
 
 .left {
@@ -63,43 +59,39 @@ label {color: black;}
     bottom: 0;
     left: 0;
     position: absolute;
-
 }
-.left > a {
+
+.left>a {
     display: block;
 
 }
+
 .btn:hover {
     background-color: rgb(1, 140, 175);
     color: white;
 }
 
-
-
-.container{
-    width:100%;
-    min-height: 100vh;
-    margin:0;
-    padding: 5%;
+.container {
+    width: 100%;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.sb{
-    width:100%;
+.sb {
+    width: 100%;
     max-width: 700px;
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content:center;
-    border-radius:60px;
+    justify-content: center;
+    border-radius: 60px;
     padding: 10px 20px;
-    margin:0;
-
+    margin: 0;
 }
 
-.symp{
-    width:100%;
+.symp {
+    width: 100%;
     align-items: right;
     justify-content: right;
     border-radius: 60px;
@@ -109,6 +101,17 @@ label {color: black;}
     background-color: #eee;
     text-decoration: none;
     color: black;
-
     transition: color 350ms, background-color 350ms;
+}
+
+.pill {
+    animation:  5s 1 alternate rotation forwards;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    } to {    
+        transform: rotate(180deg);
+    }
 }
