@@ -1,5 +1,7 @@
 
 all_medications = {
+    'allergy' : ['BENADRYL Allergy ULTRATABS Tablets with Allergy Relief and Diphenhydramine HCI 25mg', 
+                 'Epinephrine Auto-Injector Adult 0.3mg'],
     'cold cough congestion': ['Vicks DayQuil and Nyquil SEVERE Cold',
                               'Flu and Congestion Medicine and Congestion Medicine LiquiCaps Convenience Pack - Relieves Cough, Sore Throat, Congestion, Fever and Runny Nose, Daytime & Nighttime, 48 CT', 
                               'Vicks Vapo Steam Cough Suppressant', 
@@ -15,6 +17,7 @@ all_medications = {
                  'BeKOOOL Migraine Temple Roll-On, 0.17 fl oz', 'Excedrin Migraine Caplets for Migraine Pain Relief'], 
     'bodyache': ['Icy Hot Pain Relieving Topical Analgesic Back Patch, 5 CT', 
                  'CVS Health Peas Hot or Cold Therapy Pack'], 
+    'stomachache': ['Original Liquid, 5-Symptom Upset Stomach Fast Relief Original 8.0 fl oz'],
     'burn': ['CVS Health Sterile Hydrogel Burn Pads 4CT', 
              'Gold Bond Medicated Extra Strength Body Powder', 
              'CVS Health Bacitracin Ointment, 1 OZ'], 
