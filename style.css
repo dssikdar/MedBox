@@ -50,8 +50,26 @@ label {color: black;}
     bottom: 0;
     right: 0;
     position: absolute;
+}
 
-
+.disperse {
+    display: inline;
+}
+.pill {
+    animation:  5s 1 alternate rotation forwards;
+    /* animation-name: rotation;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; */
+    
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(180deg);
+    }
 }
 .right > a {
     display: block;
